@@ -11,6 +11,9 @@ import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import AuthProvider from './context/AuthProvider/AuthProvider';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
+import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
+import Pay from './Pages/Dashboard/Pay/Pay';
+import MakeAdmin from './Pages/Dashboard/MakeAdmin/MakeAdmin';
 
 function App() {
   return (
@@ -24,11 +27,20 @@ function App() {
             <PrivateRoute path="/explore">
               <Explore />
             </PrivateRoute>
+            <PrivateRoute path="/dashboard">
+              <Dashboard></Dashboard>
+            </PrivateRoute>
             <Route path="/home">
               <Home />
             </Route>
             <Route path="/Login">
               <Login />
+            </Route>
+            <Route path="/pay">
+              <Pay></Pay>
+            </Route>
+            <Route path="/admin">
+              <MakeAdmin></MakeAdmin>
             </Route>
             <Route path="/register">
               <Register />
