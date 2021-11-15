@@ -1,7 +1,7 @@
 import { Container, Typography, TextField, Button, CircularProgress, Alert } from '@mui/material';
 import React, { useState } from 'react';
 import { Grid } from '@mui/material';
-// import login from '../../../images/login.png'
+import login from '../../../images/login.jpg'
 import { NavLink, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
@@ -26,7 +26,7 @@ const Login = () => {
     }
     return (
         <Container>
-            <Grid container spacing={2}>
+            <Grid container sx={{ mt: 8 }} spacing={2}>
                 <Grid item sx={{ mt: 8 }} xs={12} md={6}>
                     <Typography variant="body1" gutterBottom>Login</Typography>
                     <form onSubmit={handleLoginSubmit}>
@@ -58,7 +58,7 @@ const Login = () => {
                     </form>
                 </Grid>
                 <Grid item xs={12} md={6}>
-                    {/* <img style={{ width: '100%' }} src={login} alt="" /> */}
+                    <img style={{ width: '100%' }} src={login} alt="" />
                 </Grid>
             </Grid>
         </Container>

@@ -6,12 +6,13 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import useAuth from './../../hooks/useAuth';
 
-
-const Navbar = () => {
+const Navigation = () => {
+    const { user, logout } = useAuth();
     return (
-        <Box sx={{ flexGrow: 1, bgcolor: 'text.secondary' }}>
+        <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
                 <Toolbar>
                     <IconButton
@@ -26,15 +27,19 @@ const Navbar = () => {
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         Colorful World
                     </Typography>
-                    <Link to="/explore"><Button color="inherit">Explore</Button></Link>
-
-                    <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/login">
-                        <Button color="inherit">Login</Button>
-                    </NavLink>
+                    <NavLink to="/explore" style={{ textDecoration: 'none', color: 'white' }}><Button color="inherit" >Explore</Button></NavLink>
+                    {
+                        user?.email ?
+                            <Button onClick={logout} color="inherit">Logout</Button>
+                            :
+                            <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/login">
+                                <Button color="inherit">Login</Button>
+                            </NavLink>
+                    }
                 </Toolbar>
             </AppBar>
         </Box>
     );
 };
 
-export default Navbar;
+export default Navigation;

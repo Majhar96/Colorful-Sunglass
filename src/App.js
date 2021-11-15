@@ -10,6 +10,7 @@ import Explore from './Pages/Explore/Explore/Explore';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import AuthProvider from './context/AuthProvider/AuthProvider';
+import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -20,9 +21,9 @@ function App() {
             <Route path="/about">
               <Home />
             </Route>
-            <Route path="/explore">
+            <PrivateRoute path="/explore">
               <Explore />
-            </Route>
+            </PrivateRoute>
             <Route path="/home">
               <Home />
             </Route>

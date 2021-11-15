@@ -1,7 +1,7 @@
 import { Container, Typography, TextField, Button, CircularProgress, Alert } from '@mui/material';
 import React, { useState } from 'react';
 import { Grid } from '@mui/material';
-// import login from '../../../images/login.png'
+import register from '../../../images/register.jpg'
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
@@ -20,7 +20,7 @@ const Register = () => {
     }
     const handleLoginSubmit = e => {
         if (loginData.password !== loginData.password2) {
-            alert('Your password did not match');
+            alert('Password did not match');
             return
         }
         registerUser(loginData.email, loginData.password);
@@ -28,7 +28,7 @@ const Register = () => {
     }
     return (
         <Container>
-            <Grid container spacing={2}>
+            <Grid container sx={{ mt: 8 }} spacing={2}>
                 <Grid item sx={{ mt: 8 }} xs={12} md={6}>
                     <Typography variant="body1" gutterBottom>Register</Typography>
                     {!isLoading && <form onSubmit={handleLoginSubmit}>
@@ -65,11 +65,13 @@ const Register = () => {
                         </NavLink>
                     </form>}
                     {isLoading && <CircularProgress />}
-                    {user?.email && <Alert severity="success">User Created successfully!</Alert>}
+
+                    {user?.email && <Alert severity="success">Congratz! registration done successfully!</Alert>}
+
                     {authError && <Alert severity="error">{authError}</Alert>}
                 </Grid>
                 <Grid item xs={12} md={6}>
-                    {/* <img style={{ width: '100%' }} src={login} alt="" /> */}
+                    <img style={{ width: '70%' }} src={register} alt="" />
                 </Grid>
             </Grid>
         </Container>

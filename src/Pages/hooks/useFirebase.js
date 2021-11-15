@@ -21,7 +21,7 @@ const useFirebase = () => {
             })
             .catch((error) => {
                 setAuthError(error.message);
-                console.log(error);
+
             })
             .finally(() => setIsLoading(false));
     }
@@ -56,9 +56,9 @@ const useFirebase = () => {
     const logout = () => {
         setIsLoading(true);
         signOut(auth).then(() => {
-            // Sign-out successful.
+            // Log-out successful.
         }).catch((error) => {
-            // An error happened.
+            // Error happened.
         })
             .finally(() => setIsLoading(false));
     }
