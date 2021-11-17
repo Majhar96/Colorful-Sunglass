@@ -14,6 +14,8 @@ import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import Pay from './Pages/Dashboard/Pay/Pay';
 import MakeAdmin from './Pages/Dashboard/MakeAdmin/MakeAdmin';
+import Purchase from './Pages/Purchase/Purchase/Purchase';
+
 
 function App() {
   return (
@@ -27,15 +29,18 @@ function App() {
             <PrivateRoute path="/explore">
               <Explore />
             </PrivateRoute>
-            <PrivateRoute path="/dashboard">
+            <Route path="/dashboard">
               <Dashboard></Dashboard>
-            </PrivateRoute>
+            </Route>
             <Route path="/home">
               <Home />
             </Route>
             <Route path="/Login">
               <Login />
             </Route>
+            <PrivateRoute path="/purchase/:productName">
+              <Purchase></Purchase>
+            </PrivateRoute>
             <Route path="/pay">
               <Pay></Pay>
             </Route>

@@ -1,8 +1,9 @@
-import React from 'react';
-import './Place.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle, faTelegram } from '@fortawesome/free-brands-svg-icons';
 import { faAddressBook } from '@fortawesome/free-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react';
+import './Place.css';
+
 
 
 const Place = () => {
@@ -25,7 +26,7 @@ const Place = () => {
                 <p>{address} 10616, 01313718687,
                     09610707334</p>
 
-                <p>{google} info@grace-clinic.com</p>
+                <p>{google} info@colorful-world.com</p>
             </div>
 
             <div className="contact-container">
@@ -36,7 +37,7 @@ const Place = () => {
                 <p>{address} 10616, 01313678687,
                     09657707334</p>
 
-                <p>{google} info@grace-clinic.com</p>
+                <p>{google} info@colorful-world.com</p>
             </div>
 
             <div className="contact-container">
@@ -47,7 +48,7 @@ const Place = () => {
                 <p>{address} 10616, 01313718687,
                     09610707334</p>
 
-                <p>{google} info@grace-clinic.com</p>
+                <p>{google} info@colorful-world.com</p>
             </div>
         </div>
     );

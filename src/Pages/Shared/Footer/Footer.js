@@ -1,6 +1,7 @@
 import React from 'react';
-import Copyright from './copyright/Copyright';
+import Copyright from './Copyright/Copyright';
 import Place from './Place/Place';
+
 
 const Footer = () => {
     return (

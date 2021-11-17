@@ -19,7 +19,7 @@ const Banner = () => {
             <Grid container spacing={2}>
                 <Grid item style={{ ...bannercontainer, textAlign: 'left' }} xs={12} sm={12} md={6}>
                     <Box>
-                        <Typography variant="h3" sx={{ color: 'white' }}>
+                        <Typography variant="h3" sx={{ color: 'yellow' }}>
                             Wear your sunglass <br />
                             be confident
                         </Typography>

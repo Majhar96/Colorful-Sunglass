@@ -1,0 +1,32 @@
+.section-Header-text{
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 72px;
+    text-align: center;
+}
+.section-header-color{
+    color:#e1e425;
+}
+#Question-header-text{
+    line-height: 50px ;
+    }
+.question-part-image{
+    width: 430px;
+    height: 424px;
+    
+}
+.accordion-question-text{
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 26px;
+    letter-spacing: 0px;
+    text-align: left;
+
+}
+.accordion-answer{
+    font-family: Inter;
+    font-size: 16px;
+    line-height: 28px;
+    color: #7E848C;
+}
