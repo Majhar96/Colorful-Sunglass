@@ -5,20 +5,19 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button } from '@mui/material';
-import { Link } from 'react-router-dom';
-// import { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+
 
 const Product = (props) => {
 
-    const { description, name, img, price } = props.product;
+    const { _id, description, name, img, price } = props.product;
 
-    // const history = useHistory();
-    // const card = {
-    //     border: '1px solid rgb(142, 150, 156)',
-    //     borderRadius: '25px',
-    //     boxShadow: '10px 10px 10px rgb(102, 114, 124)',
-    // }
+    const history = useHistory();
 
+    const handlePurchase = (_id) => {
+        const url = `/purchase/${_id}`
+        history.push(url);
+    }
 
     return (
         <Grid item xs={4} sm={4} md={4}>
@@ -40,9 +39,8 @@ const Product = (props) => {
                         {description}
                     </Typography>
                     <br />
-                    <Link to={`/purchase/${name}`}>
-                        <Button variant="contained" color="success" >Purchase </Button>
-                    </Link>
+
+                    <Button onClick={() => handlePurchase(_id)} variant="contained" color="success" >Purchase </Button>
                 </CardContent>
             </Card >
         </Grid >

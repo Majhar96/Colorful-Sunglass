@@ -1,29 +1,34 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import { useParams } from 'react-router-dom';
+import useProducts from '../../hooks/useProducts';
 import './Purchase.css'
 
 const Purchase = () => {
 
-    const { productName } = useParams();
-
-    const [product, setProduct] = useState({})
+    const { productId } = useParams();
+    const [products] = useProducts();
+    const [specifiqProduct, setSpecifiqProduct] = useState({});
 
     useEffect(() => {
-        fetch(`https://cryptic-badlands-93599.herokuapp.com/purchase/${productName}`)
-            .then(res => res.json())
-            .then(data => console.log(data));
-    }, [productName])
+        if (products.length > 0) {
+            // eslint-disable-next-line eqeqeq
+            const matchedData = products.find(product => product._id == productId);
+            setSpecifiqProduct(matchedData);
+        }
+
+    }, [productId, products])
 
     return (
         <div className="d-flex justify-content-center">
             <div className="purchase ">
-                <img className="purchase-image" src={product?.img} alt="booking" />
-                <h3>{product?.name}</h3>
-                <h2>{product?.price}</h2>
-                <p>{product?.description}</p>
+                <img className="purchase-image" src={specifiqProduct?.img} alt="booking" />
+                <h3>{specifiqProduct?.name}</h3>
+                <h2>{specifiqProduct?.price}</h2>
+                <p>{specifiqProduct?.description}</p>
             </div>
         </div>
     );
 };
 
 export default Purchase;
+
