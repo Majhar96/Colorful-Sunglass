@@ -24,6 +24,8 @@ import useAuth from '../../hooks/useAuth';
 import AddaProduct from '../AddaProduct/AddaProduct';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import AdminRoute from '../../Login/AdminRoute/AdminRoute';
+import ManageProduct from '../ManageProduct/ManageProduct';
+import ManageOrder from '../ManageOrder/ManageOrder';
 
 const drawerWidth = 200;
 
@@ -42,19 +44,19 @@ function Dashboard(props) {
             <Divider />
             <Link to="/pay"><Button color="inherit">Pay</Button></Link>
             <Divider />
-            <Link to="/pay"><Button color="inherit">My order</Button></Link>
+            <Link to="/myOrder"><Button color="inherit">My order</Button></Link>
             <Divider />
-            <Link to="/pay"><Button color="inherit">Review</Button></Link>
+            <Link to="/review"><Button color="inherit">Review</Button></Link>
 
             <Divider />
             <Link to={`${url}`}><Button color="inherit">Dashboard</Button></Link>
-            {admin && <Box>
-                <Link to={`${url}/admin`}><Button color="inherit">Make Admin</Button></Link>
+            <Box>
+                <Link to={`${url}/makeadmin`}><Button color="inherit">Make Admin</Button></Link>
                 <Link to={`${url}/addDoctor`}><Button color="inherit">Add Product</Button></Link>
                 <Link to={`${url}/addDoctor`}><Button color="inherit">Manage Product</Button></Link>
                 <Link to={`${url}/addDoctor`}><Button color="inherit">Manage all order</Button></Link>
 
-            </Box>}
+            </Box>
             <Divider />
             <Button>Log out</Button>
 
@@ -134,6 +136,12 @@ function Dashboard(props) {
                     </AdminRoute>
                     <AdminRoute path={`${path}/addaProduct`}>
                         <AddaProduct></AddaProduct>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/manageProduct`}>
+                        <ManageProduct></ManageProduct>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/manageOrder`}>
+                        <ManageOrder></ManageOrder>
                     </AdminRoute>
                 </Switch>
 

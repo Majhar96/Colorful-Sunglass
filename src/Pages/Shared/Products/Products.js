@@ -24,6 +24,7 @@ const Products = () => {
                         products.map(product => <Product
                             key={product.name}
                             product={product}
+
                         ></Product>)
                     }
                 </Grid>

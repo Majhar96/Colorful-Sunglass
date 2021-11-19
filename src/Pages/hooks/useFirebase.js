@@ -20,6 +20,7 @@ const useFirebase = () => {
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 setAuthError('');
+
                 const newUser = { email, displayName: name };
                 setUser(newUser);
 
@@ -32,6 +33,7 @@ const useFirebase = () => {
                 }).then(() => {
                 }).catch((error) => {
                 });
+
                 history.replace('/');
             })
             .catch((error) => {
@@ -88,7 +90,7 @@ const useFirebase = () => {
 
     const saveUser = (email, displayName) => {
         const user = { email, displayName };
-        fetch('https://cryptic-badlands-93599.herokuapp.com/users', {
+        fetch('http://localhost:5000/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
