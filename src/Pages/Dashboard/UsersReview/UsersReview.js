@@ -25,7 +25,7 @@ const UsersReview = () => {
         }
 
         // send to the server
-        fetch('http://localhost:5000/review', {
+        fetch('https://cryptic-badlands-93599.herokuapp.com/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

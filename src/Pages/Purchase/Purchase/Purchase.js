@@ -45,7 +45,7 @@ const Purchase = () => {
         }
 
         // send to the server
-        fetch('http://localhost:5000/customer', {
+        fetch('https://cryptic-badlands-93599.herokuapp.com/customer', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
